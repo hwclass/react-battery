@@ -1,0 +1,27 @@
+{
+  "name": "react-battery",
+  "version": "1.0.0",
+  "description": "React component for tracking the battery status of your computer or mobile device",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hwclass/react-battery.git"
+  },
+  "keywords": [
+    "react",
+    "battery",
+    "html5",
+    "api",
+    "js",
+    "javascript"
+  ],
+  "author": "hwclass",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hwclass/react-battery/issues"
+  },
+  "homepage": "https://github.com/hwclass/react-battery"
+}
