@@ -20,18 +20,18 @@ export default class Battery extends React.Component {
 	constructor (props) {
 		super(props)
 		const battery  = navigator.battery,
-    			level    = battery.level * 100
+					level    = battery.level * 100
 		this.state = {
 			level : level
 		}
 	}
 
 	render () {
-    props = {...props}
-    props.level = this.state.level
-    return (
-    	<span {...props}></span>
-    )
+		props = {...props}
+		props.level = this.state.level
+		return (
+			<span {...props}></span>
+		)
 	}
 
 }
