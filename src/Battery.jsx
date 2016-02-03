@@ -17,22 +17,34 @@ import React from 'react'
 
 export default class Battery extends React.Component {
 
-	constructor (props) {
-		super(props)
-		const battery  = navigator.battery,
-					level    = battery.level * 100
-		this.state = {
-			level : level
-		}
-	}
+  static propTypes = {
+    level : React.PropTypes.number
+  }
 
-	render () {
-		props = {...props}
-		props.level = this.state.level
-		return (
-			<span {...props}></span>
-		)
-	}
+  static defaultProps = {
+    level: 100
+  }
+
+  constructor (props) {
+    super(props)
+    this.state = {
+      level : this.props.level
+    }
+  }
+
+  componentDidMount() {
+    const battery  = navigator.battery,
+          level    = battery.level * 100
+    this.state.level = level
+  }
+
+  render () {
+    props = {...props}
+    props.level = this.state.level
+    return (
+      <span {...props}></span>
+    )
+  }
 
 }
 
