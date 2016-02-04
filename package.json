@@ -4,7 +4,8 @@
   "description": "React component for tracking the battery status of your computer or mobile device",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:example": "watchify --extension=js -o src/Battery.jsx example/src/index.js",
+    "compile": "babel -d lib/ src/"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,27 @@
   "bugs": {
     "url": "https://github.com/hwclass/react-battery/issues"
   },
-  "homepage": "https://github.com/hwclass/react-battery"
+  "homepage": "https://github.com/hwclass/react-battery",
+  "devDependencies" : {
+    "babel": "^6.1.18",
+    "babel-cli": "^6.2.0",
+    "babel-plugin-espower": "2.0.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.1.18",
+    "babelify": "7.2.0",
+    "browserify": "12.0.1",
+    "espower-babel": "latest",
+    "espower-loader": "latest",
+    "espowerify": "latest",
+    "intelli-espower-loader": "latest",
+    "watchify": "3.5.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "files": [
+    "src"
+  ]
 }

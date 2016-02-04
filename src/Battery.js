@@ -13,38 +13,33 @@
  * Released: February 2nd, 2016
  */
 
-import React from 'react'
+import React, {Component, PropTypes} from 'react'
 
-export default class Battery extends React.Component {
-
-  static propTypes = {
-    level : React.PropTypes.number
-  }
-
-  static defaultProps = {
-    level: 100
-  }
+class Battery extends React.Component {
 
   constructor (props) {
     super(props)
+    const battery  = navigator.battery,
+          level    = battery.level * 100
     this.state = {
-      level : this.props.level
+      level : level
     }
   }
 
-  componentDidMount() {
-    const battery  = navigator.battery,
-          level    = battery.level * 100
-    this.state.level = level
-  }
-
   render () {
-    props = {...props}
-    props.level = this.state.level
     return (
-      <span {...props}></span>
+      <span>{this.state.level}</span>
     )
   }
 
 }
 
+Battery.propTypes = {
+  level : React.PropTypes.number,
+}
+
+Battery.defaultProps = {
+  level: 100
+}
+
+export default Battery
